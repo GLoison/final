@@ -35,24 +35,20 @@ public class Dialog extends JDialog implements ActionListener{
 	private static final String FILLED_COLOR_LABEL = "filled color : ";
 	private static final String STROKED_LABEL = "strocked : ";
 	private static final String FILLED_LABEL = "filled : ";
-	private static final String IMAGE_LABEL = "image : ";
-	private static final String LIEN_LABEL = "lien : ";
-	private static final String DEFAULT_LIEN = "";
 	private static final String STROKED = "Strocked";
 	private static final String FILLED = "Filled";
-	private static final String IMAGE ="Image";
 	private static final String TRUE = "True";
 	private static final String FALSE = "False";
 	private static final String OK = "OK";
 	
-	private JTextField x,y,imageLien;
+	private JTextField x,y;
 	private JComboBox<String> strockedColor,filledColor;
 	private JButton ok;
-	private JRadioButton filledTrue,filledFalse,strokedTrue,strokedFalse,imageTrue, imageFalse;
+	private JRadioButton filledTrue,filledFalse,strokedTrue,strokedFalse;
 
 	public Dialog() {
 		super();
-		super.setSize(520, 420);
+		super.setSize(520, 560);
 		super.setLocationRelativeTo(null);
 	}
 	public JPanel panelPosition(){
@@ -130,27 +126,7 @@ public class Dialog extends JDialog implements ActionListener{
 		return panelStrocked;
 	}
 	
-	public JPanel panelImage() {
-		JPanel panelImage = new JPanel();
-		panelImage.setBorder(BorderFactory.createTitledBorder(IMAGE));
-		panelImage.setPreferredSize(new Dimension(250,80));
-		JLabel imageLabel = new JLabel(IMAGE_LABEL);
-		panelImage.add(imageLabel);
-		this.imageTrue = new JRadioButton(TRUE);
-		this.imageTrue.setSelected(true);
-		this.imageFalse = new JRadioButton(FALSE);
-		ButtonGroup imageButtons = new ButtonGroup();
-		imageButtons.add(this.strokedTrue);
-		imageButtons.add(this.strokedFalse);
-		panelImage.add(this.strokedTrue);
-		panelImage.add(this.strokedFalse);
-		JLabel lienLabel=new JLabel(LIEN_LABEL);
-		panelImage.add(lienLabel);
-		this.imageLien = new JTextField(DEFAULT_LIEN);
-		this.imageLien.setPreferredSize(new Dimension(120,25));
-		panelImage.add(imageLien);
-		return panelImage;
-	}
+
 	
 	public JPanel panelValidation() {
 		JPanel panelValidation = new JPanel();
@@ -160,12 +136,11 @@ public class Dialog extends JDialog implements ActionListener{
 		return panelValidation;
 	}
 	
-	public JPanel panelSettings(JPanel panelPosition,JPanel panelFilled, JPanel panelStrocked, JPanel panelImage, JPanel panelColor) {
+	public JPanel panelSettings(JPanel panelPosition,JPanel panelFilled, JPanel panelStrocked, JPanel panelColor) {
 		JPanel panelSettings = new JPanel();
 		panelSettings.add(panelPosition);
 		panelSettings.add(panelFilled);
 		panelSettings.add(panelStrocked);
-		panelSettings.add(panelImage);
 		panelSettings.add(panelColor);
 		return panelSettings;
 	}
@@ -230,9 +205,5 @@ public class Dialog extends JDialog implements ActionListener{
 
 	public Color getFilledColor() {
 		return this.getColor((String) filledColor.getSelectedItem());
-	}
-
-
-	
-	
+	}	
 }

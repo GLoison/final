@@ -12,15 +12,21 @@ public class ImageAttributes extends Attributes {
 	public static final String ID = "Image";
 	private Image img;
 	private int width;
+	private File fl;
 	
 	public ImageAttributes(File fl,boolean i,int width) throws IOException {
-		this.img=ImageIO.read(fl);
+		this.fl=fl;
+		this.img=ImageIO.read(this.fl);
 		this.image=i;
 		this.width=width;
 	}
 	
 	public ImageAttributes() {
 		
+	}
+	
+	public File getFile() {
+		return fl;
 	}
 	
 	public Image getImage() {

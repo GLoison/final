@@ -5,6 +5,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -549,7 +550,16 @@ public class ShapesController extends Controller {
 			ColorAttributes ca = (ColorAttributes) rec.getAttributes(ColorAttributes.ID);
 			shape.addAttributes(new ColorAttributes(ca.isFilled(), ca.isStroked(), ca.isGrad(), ca.getFilledColor(),
 					ca.getStrokedColor(), ca.getStart(), ca.getEnd(),ca.getDirection()));
-			shape.addAttributes(new ImageAttributes());
+			ImageAttributes ia =(ImageAttributes) rec.getAttributes(ImageAttributes.ID);
+			if(ia.isImage()) {
+			try {
+				shape.addAttributes(new ImageAttributes(ia.getFile(),ia.isImage(),ia.getWidth()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			}
+			else shape.addAttributes(new ImageAttributes());
 		} 
 		else if (s instanceof SCircle) {
 			SCircle cir = (SCircle) s;
