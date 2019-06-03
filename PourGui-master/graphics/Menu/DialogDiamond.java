@@ -23,12 +23,14 @@ public class DialogDiamond extends Dialog{
 	private static final Dimension DEFAULT_DIMENSION_PANEL = new Dimension(250,60);
 	private static final Dimension DEFAULT_DIMENSION_TEXT_FIELD = new Dimension(60,25);
 	private static final int DEFAULT_VALUE=100;
-	private static final String DEFAULT_TITLE = "Créer un nouveau rectangle";
-	private static final String HEIGHT_LABEL = "height : ";
-	private static final String WIDTH_LABEL = "width : ";
+	private static final String DEFAULT_TITLE = "Créer un nouveau losange";
 	private static final String HEIGHT = "Height";
 	private static final String WIDTH = "Width";
-	private JTextField height,width;
+	private static final String HEIGHT_LABEL = "height : ";
+	private static final String WIDTH_LABEL = "width : ";
+	
+	private JTextField height;
+	private JTextField width;
 	
 	public DialogDiamond() {
 		
@@ -54,7 +56,7 @@ public class DialogDiamond extends Dialog{
 		Object source = e.getSource();
 		if (source.equals(super.getOk())) {
 			SDiamond d = new SDiamond(new Point(getX(),getY()),this.getH(),this.getW());
-			d.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false, super.getFilledColor(),super.getStrockedColor(), null, null, null));
+			d.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false,super.getFilledColor(),super.getStrockedColor(),null,null,null));
 			d.addAttributes(new SelectionAttributes());
 			d.addAttributes(new ImageAttributes());
 			Editor.model.add(d);

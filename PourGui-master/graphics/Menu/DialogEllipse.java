@@ -23,7 +23,7 @@ public class DialogEllipse extends Dialog{
 	private static final Dimension DEFAULT_DIMENSION_PANEL = new Dimension(250,60);
 	private static final Dimension DEFAULT_DIMENSION_TEXT_FIELD = new Dimension(60,25);
 	private static final int DEFAULT_VALUE=100;
-	private static final String DEFAULT_TITLE = "Créer un nouveau rectangle";
+	private static final String DEFAULT_TITLE = "Créer une nouvelle ellipse";
 	private static final String HEIGHT = "Height";
 	private static final String WIDTH = "Width";
 	private static final String HEIGHT_LABEL = "height : ";
@@ -56,7 +56,7 @@ public class DialogEllipse extends Dialog{
 		Object source = e.getSource();
 		if (source.equals(super.getOk())) {
 			SEllipse el = new SEllipse(new Point(getX(),getY()),this.getW(),this.getH());
-			el.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false, super.getFilledColor(),super.getStrockedColor(), null, null, null));
+			el.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false,super.getFilledColor(),super.getStrockedColor(),null,null,null));
 			el.addAttributes(new SelectionAttributes());
 			el.addAttributes(new ImageAttributes());
 			Editor.model.add(el);

@@ -22,7 +22,7 @@ public class DialogTriangle extends Dialog{
 	private static final Dimension DEFAULT_DIMENSION_PANEL = new Dimension(250,60);
 	private static final Dimension DEFAULT_DIMENSION_TEXT_FIELD = new Dimension(60,25);
 	private static final int DEFAULT_VALUE=100;
-	private static final String DEFAULT_TITLE = "Créer un nouveau rectangle";
+	private static final String DEFAULT_TITLE = "Créer un nouveau triangle";
 	private static final String POINT = "Points";
 
 	private static final String X_LABEL = "x : ";
@@ -53,7 +53,7 @@ public class DialogTriangle extends Dialog{
 		Object source = e.getSource();
 		if (source.equals(super.getOk())) {
 			STriangle t = new STriangle(new Point(getX(),getY()),new Point(getX1(),getY1()),new Point(getX2(),getY2()));
-			t.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false, super.getFilledColor(),super.getStrockedColor(), null, null, null));
+			t.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false,super.getFilledColor(),super.getStrockedColor(),null,null,null));
 			t.addAttributes(new SelectionAttributes());
 			t.addAttributes(new ImageAttributes());
 			Editor.model.add(t);

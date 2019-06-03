@@ -22,7 +22,7 @@ private static final long serialVersionUID = 1L;
 	private static final Dimension DEFAULT_DIMENSION_PANEL = new Dimension(250,60);
 	private static final Dimension DEFAULT_DIMENSION_TEXT_FIELD = new Dimension(60,25);
 	private static final int DEFAULT_VALUE=100;
-	private static final String DEFAULT_TITLE = "Créer un nouveau rectangle";
+	private static final String DEFAULT_TITLE = "Créer une nouvelle fleche";
 	private static final String HEIGHT = "Height";
 	private static final String WIDTH = "Width";
 	private static final String HEIGHT_LABEL = "height : ";
@@ -55,7 +55,7 @@ private static final long serialVersionUID = 1L;
 		Object source = e.getSource();
 		if (source.equals(super.getOk())) {
 			SArrow a = new SArrow(new Point(getX(),getY()),this.getW(),this.getH());
-			a.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false, super.getFilledColor(),super.getStrockedColor(), null, null, null));
+			a.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false,super.getFilledColor(),super.getStrockedColor(),null,null,null));
 			a.addAttributes(new SelectionAttributes());
 			a.addAttributes(new ImageAttributes());
 			Editor.model.add(a);
