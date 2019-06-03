@@ -39,8 +39,7 @@ public class SRectangle extends Shape {
 	public Rectangle getBounds() {
 		ImageAttributes i= (ImageAttributes) getAttributes(ImageAttributes.ID);
 		if (i.isImage()) {
-			this.width=i.getWidth();
-			this.height=(i.getImage().getHeight(null)*i.getWidth())/i.getImage().getWidth(null);
+			this.height=(i.getImage().getHeight(null)*this.width)/i.getImage().getWidth(null);
 			Rectangle bd = new Rectangle(this.getLoc().x,this.getLoc().y,width,height);
 			return bd;
 		}
@@ -55,7 +54,7 @@ public class SRectangle extends Shape {
 	@Override
 	public void setSize(int dw, int dh) {
 		if(((ImageAttributes) this.getAttributes(ImageAttributes.ID)).isImage()){
-			((ImageAttributes) this.getAttributes(ImageAttributes.ID)).setSize(dw);
+			this.width+=dw;
 		}
 		else {
 			rect.setSize(rect.width+dw, rect.height+dh);

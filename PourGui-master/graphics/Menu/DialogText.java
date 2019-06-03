@@ -58,6 +58,7 @@ public class DialogText extends Dialog implements ActionListener {
 		JPanel panelText = this.panelText();
 		JPanel panelFont = this.panelFont();
 		JPanel panelSettings = super.panelSettings(panelPosition, panelFilled, panelStrocked, panelColor);
+
 		panelSettings.add(panelText);
 		panelSettings.add(panelFont);
 	

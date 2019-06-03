@@ -80,7 +80,7 @@ public class DialogRectangle extends Dialog {
 			r.addAttributes(new ColorAttributes(super.getfTrue(),super.getsTrue(),false,super.getFilledColor(),super.getStrockedColor(),null,null,null));
 			r.addAttributes(new SelectionAttributes());
 			try {
-				r.addAttributes(new ImageAttributes(new File(imageLien.getText()),imageTrue.isSelected(), this.getW()));
+				r.addAttributes(new ImageAttributes(new File(imageLien.getText()),imageTrue.isSelected()));
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

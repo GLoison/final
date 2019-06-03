@@ -241,7 +241,6 @@ public class ShapesController extends Controller {
 				selec.get(0).setSize(dw, dh);
 				this.xPressed =evt.getPoint().x;
 				this.yPressed =evt.getPoint().y;
-				System.out.println("r2");
 			}
 			
 		}
@@ -262,8 +261,6 @@ public class ShapesController extends Controller {
 				selec.get(0).setSize(dw, dh);
 				this.xPressed =evt.getPoint().x;
 				this.yPressed =evt.getPoint().y;
-				System.out.println("r1");
-
 			}
 		}
 		if(r4) {
@@ -283,7 +280,6 @@ public class ShapesController extends Controller {
 				selec.get(0).setSize(dw, dh);
 				this.xPressed =evt.getPoint().x;
 				this.yPressed =evt.getPoint().y;
-				System.out.println("r4");
 			}
 		}
 		if(r3) {
@@ -303,7 +299,6 @@ public class ShapesController extends Controller {
 				selec.get(0).setSize(dw, dh);
 				this.xPressed =evt.getPoint().x;
 				this.yPressed =evt.getPoint().y;
-				System.out.println("r3");
 			}
 		}
 		
@@ -315,7 +310,6 @@ public class ShapesController extends Controller {
 	public void keyPressed(KeyEvent evt)
 	{
 		int key = evt.getKeyCode();
-		System.out.println(key);
 		switch (key) 
 		{
 		case KeyEvent.VK_DELETE:
@@ -553,7 +547,7 @@ public class ShapesController extends Controller {
 			ImageAttributes ia =(ImageAttributes) rec.getAttributes(ImageAttributes.ID);
 			if(ia.isImage()) {
 			try {
-				shape.addAttributes(new ImageAttributes(ia.getFile(),ia.isImage(),ia.getWidth()));
+				shape.addAttributes(new ImageAttributes(ia.getFile(),ia.isImage()));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

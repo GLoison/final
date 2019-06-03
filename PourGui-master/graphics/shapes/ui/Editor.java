@@ -61,7 +61,7 @@ public class Editor extends JFrame
 		SRectangle r = new SRectangle(new Point(700,500),60,40);
 		r.addAttributes(new ColorAttributes(true,false,false,Color.MAGENTA,Color.MAGENTA,null,null,null));
 		r.addAttributes(new SelectionAttributes());
-		r.addAttributes(new ImageAttributes(new File("Snow Ball.jpg"),true,100));
+		r.addAttributes(new ImageAttributes(new File("Snow Ball.jpg"),true));
 		Editor.model.add(r);
 		
 		SCircle c = new SCircle(new Point(100,100),70);
